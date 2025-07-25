@@ -1,10 +1,11 @@
+import About from "./components/About"
 
 function App() {
 
   return (
      <>
-        <h1>Hi My name is Wilmer Salazar I'm a Software Developer</h1>
-      </>
+     <About></About>
+     </>
   )
 }
 
