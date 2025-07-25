@@ -1,11 +1,14 @@
-import About from "./components/About"
+import { ThemeProvider } from "@/components/theme-provider"
+import { ModeToggle } from "./components/mode-toggle"
 
 function App() {
 
   return (
-     <>
-     <About></About>
-     </>
+    <>
+      <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+        <ModeToggle></ModeToggle>
+      </ThemeProvider>
+    </>
   )
 }
 
