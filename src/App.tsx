@@ -1,12 +1,13 @@
 import { ThemeProvider } from "@/components/theme-provider"
-import { ModeToggle } from "./components/mode-toggle"
+import NavBar from "./components/NavBar"
 
 function App() {
 
   return (
     <>
       <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-        <ModeToggle></ModeToggle>
+        <NavBar />
+        
       </ThemeProvider>
     </>
   )
