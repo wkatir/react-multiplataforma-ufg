@@ -17,12 +17,7 @@ const About = () => {
             </section>
             <section>
                 <h2>My hobbies</h2>
-                <ul>
-                    <li>Cloud Computing</li>
-                    <li>Learning about IA</li>
-                    <li>Blockchain technologies</li>
-                    <li>Disruptive technologies</li>
-                </ul>
+                
             </section>
             <footer>
                 <p>© 2025 Wilmer Salazar</p>
