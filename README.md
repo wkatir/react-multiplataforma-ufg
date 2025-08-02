@@ -114,8 +114,7 @@ react-multiplataforma-ufg/
 │   │
 │   ├── blocks/             # Complex component blocks
 │   │   └── Components/
-│   │       └── AnimatedList/
-│   │           └── AnimatedList.tsx
+│   │       # (removed AnimatedList component)
 │   │
 │   ├── lib/                # Utility functions
 │   │   └── utils.ts
