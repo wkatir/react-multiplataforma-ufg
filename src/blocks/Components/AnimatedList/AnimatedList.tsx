@@ -6,10 +6,8 @@ import React, {
   useRef,
   useState,
   useEffect,
-  type ReactNode,
-  type MouseEventHandler,
-  type UIEvent,
 } from "react";
+import type { ReactNode, MouseEventHandler, UIEvent } from "react";
 import { motion, useInView } from "framer-motion";
 
 interface AnimatedItemProps {
