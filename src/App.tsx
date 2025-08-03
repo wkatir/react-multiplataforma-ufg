@@ -1,15 +1,44 @@
 import { ThemeProvider } from "@/components/theme-provider"
+import { Routes, Route } from "react-router"
 import NavBar from "./components/NavBar"
+import Home from "./pages/Home"
+import Profile from "./pages/Profile"
+import Recipe from "./pages/Recipe"
+import Gallery from "./pages/Gallery"
+import ProtectedRoute from "./components/ProtectedRoute"
 
 function App() {
-
   return (
-    <>
-      <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-        <NavBar />
-        
-      </ThemeProvider>
-    </>
+    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route 
+          path="/profile" 
+          element={
+            <ProtectedRoute>
+              <Profile />
+            </ProtectedRoute>
+          } 
+        />
+        <Route 
+          path="/recipe" 
+          element={
+            <ProtectedRoute>
+              <Recipe />
+            </ProtectedRoute>
+          } 
+        />
+        <Route 
+          path="/gallery" 
+          element={
+            <ProtectedRoute>
+              <Gallery />
+            </ProtectedRoute>
+          } 
+        />
+      </Routes>
+    </ThemeProvider>
   )
 }
 

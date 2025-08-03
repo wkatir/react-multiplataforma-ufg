@@ -1,18 +1,26 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Briefcase, FileText, Home, User } from "lucide-react";
+import { Home, User, Image, ChefHat } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { ModeToggle } from "./mode-toggle";
 import { SignedIn, SignedOut, UserButton, SignInButton } from "@clerk/clerk-react";
+import { Link, useLocation } from "react-router";
 
 export default function NavBar() {
+  const location = useLocation();
+  
   const navItems = [
-    { name: "Home", url: "#", icon: Home },
-    { name: "About", url: "#", icon: User },
-    { name: "Projects", url: "#", icon: Briefcase },
-    { name: "Resume", url: "#", icon: FileText },
+    { name: "Home", url: "/", icon: Home },
+    { name: "Profile", url: "/profile", icon: User },
+    { name: "Recipe", url: "/recipe", icon: ChefHat },
+    { name: "Gallery", url: "/gallery", icon: Image },
   ];
-  const [activeTab, setActiveTab] = useState(navItems[0].name);
+
+  const [activeTab, setActiveTab] = useState(() => {
+    const currentPath = location.pathname;
+    const currentItem = navItems.find(item => item.url === currentPath);
+    return currentItem ? currentItem.name : navItems[0].name;
+  });
 
   return (
     <div
@@ -24,9 +32,9 @@ export default function NavBar() {
           const isActive = activeTab === item.name;
 
           return (
-            <a
+            <Link
               key={item.name}
-              href={item.url}
+              to={item.url}
               onClick={() => setActiveTab(item.name)}
               className={cn(
                 "relative cursor-pointer text-sm font-semibold px-6 py-2 rounded-full transition-colors",
@@ -56,7 +64,7 @@ export default function NavBar() {
                   </div>
                 </motion.div>
               )}
-            </a>
+            </Link>
           );
         })}
         
