@@ -5,7 +5,7 @@ import Home from "./pages/Home"
 import Profile from "./pages/Profile"
 import Recipe from "./pages/Recipe"
 import Gallery from "./pages/Gallery"
-import ProtectedRoute from "./components/ProtectedRoute"
+// import ProtectedRoute from "./components/ProtectedRoute"
 
 function App() {
   return (
@@ -13,30 +13,9 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route 
-          path="/profile" 
-          element={
-            <ProtectedRoute>
-              <Profile />
-            </ProtectedRoute>
-          } 
-        />
-        <Route 
-          path="/recipe" 
-          element={
-            <ProtectedRoute>
-              <Recipe />
-            </ProtectedRoute>
-          } 
-        />
-        <Route 
-          path="/gallery" 
-          element={
-            <ProtectedRoute>
-              <Gallery />
-            </ProtectedRoute>
-          } 
-        />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/recipe" element={<Recipe />} />
+        <Route path="/gallery" element={<Gallery />} />
       </Routes>
     </ThemeProvider>
   )
