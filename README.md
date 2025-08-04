@@ -6,7 +6,7 @@ A comprehensive React application showcasing modern web development practices wi
 
 ## 🚀 Live Demo
 
-Visit the application at: [http://localhost:5174/](http://localhost:5174/)
+Visit the application at: [https://react-multiplataforma-ufg.vercel.app/](https://react-multiplataforma-ufg.vercel.app/)
 
 ---
 
